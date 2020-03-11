@@ -7,6 +7,7 @@ let ratio;
 
 function start() {
   cnt.addEventListener("scroll", scrolling);
+  document.querySelector("#end_scrolling").paused;
 }
 function scrolling() {
   console.log("scrolling");
@@ -20,4 +21,8 @@ function scrolling() {
 
   //status.style.width = ratio + "%";
   status.style.setProperty("--ratio", ratio);
+  if (ratio === 1) {
+    document.querySelector("#end_scrolling").play();
+    document.querySelector("#end_scrolling").volume = 0.3;
+  }
 }
