@@ -17,46 +17,47 @@ main {
 
 nav {
   text-align: center;
+  background-color: aliceblue;
   height: var(--nav-height);
+  z-index: 999;
 }
-#scrollinfo {
-  height: 3vh;
+.statusbar {
+  height: 1.5vh;
+  transform: translate(-100%, 50%);
   background-color: #70a7b3;
   width: 100%;
+  z-index: 999;
   transform: translate(calc(-100% + var(--ratio) * 100%), 0);
 }
+
 .container {
   height: calc(200vh - var(--nav-height));
   overflow-y: scroll;
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
-  /* perspective: 2px; */
+  scroll-snap-type: y mandatory;
+  perspective: 6px;
 }
 
 /* --- SKRIFT --- */
 h1 {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: 5vw;
-  text-indent: 6.3vw;
+  font-size: 2.8rem;
+  padding-top: 2vw;
+  /* text-indent: 6.3vw; */
   color: #b38156;
-}
-h3 {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: 2vw;
-  text-indent: 1.5vw;
-  color: ##24444b;
 }
 a,
 p {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: 1.3vw;
-  margin: 1.4vw;
+  font-size: 1rem;
   color: #24444b;
-  line-height: 4.5vh;
+  line-height: 4.3vh;
   text-decoration: none;
+}
+a {
+  padding: 1.4vw;
 }
 
 /* --- INDHOLD --- */
@@ -64,78 +65,82 @@ section {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  padding: 3vw;
+  scroll-snap-align: start;
+  padding: 10vw;
 }
 .text {
-  /* line-height: 4vh; */
-  /* padding: 4vw; */
-  margin: 5vw;
+  transform: translateZ(0.3px) translateY(2vh) scale(1);
 }
+
 .image {
   padding: 4vw;
-  margin: 3vw;
+  margin-left: 3vw;
+  z-index: 111;
+  box-shadow: 14px 9px 57px -21px gray;
+  position: absolute;
+  transform: translateZ(-1px) scale(1.4);
 }
 .left,
 .right {
   flex-basis: 300px;
   flex-grow: 1;
+  padding: 0;
 }
 #section1 {
   background-color: #baf3ff;
+  scroll-snap-align: center;
 }
 #section1 .image {
   background-image: url(images/white-wooden-staircase-with-yellow-wall-3802666.jpg);
   background-size: 100%;
-  position: relative;
-  left: 5vw;
-  align-self: center;
-  width: 30vw;
-  height: 78vh;
+  top: 0;
+  left: 60vw;
+  width: 25vw;
+  height: 53vh;
 }
 #section2 {
   background-color: #d4f7ff;
 }
-
 #section2 .image {
   background-image: url(images/woman-in-white-tank-top-3828240.jpg);
   background-size: 100%;
-  position: relative;
+  top: 55vw;
   left: 3vw;
-  width: 30vw;
-  height: 75vh;
+  width: 25vw;
+  height: 53vh;
 }
-#section2 .left {
-  align-self: start;
-}
+
 #section3 {
-  background-color: #baf3ff;
+  background-color: #d4f7ff;
 }
 #section3 .image {
   background-image: url(images/woman-wearing-white-dress-walking-on-sand-2029253.jpg);
   background-size: 100%;
-  position: relative;
-  top: 15vw;
+  top: 108vw;
+  right: 2.5vw;
   align-self: center;
-  width: 35vw;
-  height: 43vh;
+  width: 33vw;
+  height: 40vh;
 }
 
-#section4 {
-  background-color: #d4f7ff;
+#section4,
+#section5 {
+  background-color: #baf3ff;
 }
 #section4 .image {
   background-image: url(images/IMG_1091.jpeg);
   background-size: 100%;
-  position: relative;
-  top: 15vw;
-  align-self: center;
-  width: 40vw;
-  height: 50vh;
+  top: 166vw;
+  left: 2vw;
+  width: 33vw;
+  height: 38vh;
 }
 #section5 {
   flex-flow: column wrap;
-  background-color: #baf3ff;
 }
 #section5 .left {
   flex-basis: 100px;
+}
+.left h1 {
+  text-align: center;
 }
