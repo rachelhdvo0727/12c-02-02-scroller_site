@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --nav-height: 4vh;
+}
+
+body {
+  overscroll-behavior: none;
+}
+
+main {
+  display: grid;
+}
+
+nav {
+  text-align: center;
+  height: var(--nav-height);
+}
+#scrollinfo {
+  height: 3vh;
+  background-color: #70a7b3;
+  width: 100%;
+  transform: translate(calc(-100% + var(--ratio) * 100%), 0);
+}
+.container {
+  height: calc(200vh - var(--nav-height));
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+  /* perspective: 2px; */
+}
+
+/* --- SKRIFT --- */
+h1 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 5vw;
+  text-indent: 6.3vw;
+  color: #b38156;
+}
+h3 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 2vw;
+  text-indent: 1.5vw;
+  color: ##24444b;
+}
+a,
+p {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 1.3vw;
+  margin: 1.4vw;
+  color: #24444b;
+  line-height: 4.5vh;
+  text-decoration: none;
+}
+
+/* --- INDHOLD --- */
+section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 3vw;
+}
+.text {
+  /* line-height: 4vh; */
+  /* padding: 4vw; */
+  margin: 5vw;
+}
+.image {
+  padding: 4vw;
+  margin: 3vw;
+}
+.left,
+.right {
+  flex-basis: 300px;
+  flex-grow: 1;
+}
+#section1 {
+  background-color: #baf3ff;
+}
+#section1 .image {
+  background-image: url(images/white-wooden-staircase-with-yellow-wall-3802666.jpg);
+  background-size: 100%;
+  position: relative;
+  left: 5vw;
+  align-self: center;
+  width: 30vw;
+  height: 78vh;
+}
+#section2 {
+  background-color: #d4f7ff;
+}
+
+#section2 .image {
+  background-image: url(images/woman-in-white-tank-top-3828240.jpg);
+  background-size: 100%;
+  position: relative;
+  left: 3vw;
+  width: 30vw;
+  height: 75vh;
+}
+#section2 .left {
+  align-self: start;
+}
+#section3 {
+  background-color: #baf3ff;
+}
+#section3 .image {
+  background-image: url(images/woman-wearing-white-dress-walking-on-sand-2029253.jpg);
+  background-size: 100%;
+  position: relative;
+  top: 15vw;
+  align-self: center;
+  width: 35vw;
+  height: 43vh;
+}
+
+#section4 {
+  background-color: #d4f7ff;
+}
+#section4 .image {
+  background-image: url(images/IMG_1091.jpeg);
+  background-size: 100%;
+  position: relative;
+  top: 15vw;
+  align-self: center;
+  width: 40vw;
+  height: 50vh;
+}
+#section5 {
+  flex-flow: column wrap;
+  background-color: #baf3ff;
+}
+#section5 .left {
+  flex-basis: 100px;
+}
